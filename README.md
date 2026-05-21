@@ -2,6 +2,9 @@
 
 A full-stack Monte Carlo simulation platform for portfolio risk analysis. Run thousands of simulated market paths, explore percentile outcomes, and export results.
 
+**Live demo**: https://frontend-nine-orpin-33.vercel.app  
+**API**: https://montevista.onrender.com
+
 **Live stack**: Next.js 16 (frontend) + FastAPI (backend)  
 **Deploy target**: Vercel + Render
 
@@ -35,7 +38,7 @@ python -m uvicorn main:app --host 0.0.0.0 --port 8002 --reload
 
 Test: `curl http://localhost:8002/api/health`
 
-### Frontend (Next.js on port 3000)
+### Frontend (Next.js on port 3001)
 
 ```bash
 cd frontend
@@ -44,7 +47,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000` (or whichever port Next.js picks if 3000 is taken).
+Open `http://localhost:3001`.
 
 ---
 
@@ -79,7 +82,7 @@ Open `http://localhost:3000` (or whichever port Next.js picks if 3000 is taken).
    - `NEXT_PUBLIC_API_URL` = your Render backend URL (e.g. `https://montevista-api.onrender.com`)
 3. Deploy
 
-`vercel.json` is included and rewrites `/api/*` to the backend URL.
+`vercel.json` is included. Set `NEXT_PUBLIC_API_URL` via `vercel env add` or the Vercel dashboard.
 
 ---
 
