@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* Dark theme variables (default) */
+:root {
+  --bg: #0d0d0e;
+  --surface: #141415;
+  --surface-2: #1a1a1b;
+  --surface-offset: #202022;
+  --border: rgba(255,255,255,0.08);
+  --text: #e2e2e3;
+  --text-muted: #737375;
+  --primary: #2dd4bf;
+  --primary-hover: #14b8a4;
+  --success: #4ade80;
+  --warning: #fb923c;
+  --error: #f87171;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-2: #f0ede8;
+  --surface-offset: #e8e4de;
+  --border: rgba(0,0,0,0.08);
+  --text: #1a1a1b;
+  --text-muted: #6b7280;
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #dc2626;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-offset: var(--surface-offset);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), 'Inter', system-ui, sans-serif;
+}
+
+/* Tabular numbers on all data cells */
+.tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--surface-offset); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
