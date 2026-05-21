@@ -312,15 +312,15 @@ export default function SimulatePage() {
                 <button
                   onClick={() => set({ inflation_rate: form.inflation_rate === 0 ? 0.03 : 0 })}
                   className={[
-                    'relative w-11 h-6 rounded-full transition-colors duration-200',
+                    'relative w-11 h-6 rounded-full overflow-hidden transition-colors duration-200',
                     form.inflation_rate > 0 ? 'bg-primary' : 'bg-surface-offset',
                   ].join(' ')}
                   aria-label="Toggle inflation"
                 >
                   <span
                     className={[
-                      'absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200',
-                      form.inflation_rate > 0 ? 'translate-x-6' : 'translate-x-1',
+                      'absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200',
+                      form.inflation_rate > 0 ? 'translate-x-5' : 'translate-x-0',
                     ].join(' ')}
                   />
                 </button>
@@ -378,15 +378,15 @@ export default function SimulatePage() {
                 <button
                   onClick={() => set({ use_seed: !form.use_seed })}
                   className={[
-                    'relative w-11 h-6 rounded-full transition-colors duration-200',
+                    'relative w-11 h-6 rounded-full overflow-hidden transition-colors duration-200',
                     form.use_seed ? 'bg-primary' : 'bg-surface-offset',
                   ].join(' ')}
                   aria-label="Toggle seed"
                 >
                   <span
                     className={[
-                      'absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200',
-                      form.use_seed ? 'translate-x-6' : 'translate-x-1',
+                      'absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200',
+                      form.use_seed ? 'translate-x-5' : 'translate-x-0',
                     ].join(' ')}
                   />
                 </button>

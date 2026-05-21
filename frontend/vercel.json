@@ -1,11 +1,5 @@
 {
   "env": {
     "NEXT_PUBLIC_API_URL": "@monte_api_url"
-  },
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "env:NEXT_PUBLIC_API_URL/api/:path*"
-    }
-  ]
+  }
 }
